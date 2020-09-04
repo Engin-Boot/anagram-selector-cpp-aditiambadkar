@@ -6,14 +6,15 @@
 using namespace std;
 
 bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) {
-    if(word1.length() != word2.length())
-        return false;
     
     string word1Copy = word1;
     string word2Copy = word2;
     
     word1Copy.erase(remove(word1Copy.begin(), word1Copy.end(), ' '), word1Copy.end());
     word2Copy.erase(remove(word2Copy.begin(), word2Copy.end(), ' '), word2Copy.end());
+    
+    if(word1Copy.length() != word2Copy.length())
+        return false;
     
     transform(word1Copy.begin(), word1Copy.end(), word1Copy.begin(), ::tolower); 
     transform(word2Copy.begin(), word2Copy.end(), word2Copy.begin(), ::tolower); 
