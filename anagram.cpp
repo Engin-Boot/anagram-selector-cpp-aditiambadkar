@@ -21,6 +21,9 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     sort(word1Copy.begin(), word1Copy.end());
     sort(word2Copy.begin(), word2Copy.end());
     
+    cout<<word1Copy<<endl;
+    cout<<word2Copy<<endl;
+    
     if(word1Copy.compare(word2Copy) == 0)
         return true;
     
