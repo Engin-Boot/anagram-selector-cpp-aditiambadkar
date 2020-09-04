@@ -3,6 +3,8 @@
 #include <bits/stdc++.h> 
 
 bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) {
+    string w1 = word1;
+    string w2 = word2;
     if(word1.length() != word2.length())
         return false;
     transform(word1.begin(), wordl.end(), wordl.begin(), ::tolower); 
