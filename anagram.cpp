@@ -11,6 +11,9 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     string word1Copy = word1;
     string word2Copy = word2;
     
+    word1Copy.erase(remove_if(word1Copy.begin(), word1Copy.end(), isspace), word1Copy.end());
+    word2Copy.erase(remove_if(word2Copy.begin(), word2Copy.end(), isspace), word2Copy.end());
+    
     transform(word1Copy.begin(), word1Copy.end(), word1Copy.begin(), ::tolower); 
     transform(word2Copy.begin(), word2Copy.end(), word2Copy.begin(), ::tolower); 
     
