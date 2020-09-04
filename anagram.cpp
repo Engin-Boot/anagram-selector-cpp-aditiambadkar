@@ -5,20 +5,22 @@
 using namespace std;
 
 bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) {
-    string w1 = word1;
-    string w2 = word2;
     if(word1.length() != word2.length())
         return false;
-    transform(word1.begin(), wordl.end(), wordl.begin(), ::tolower); 
-    transform(wordl.begin(), wordl.end(), wordl.begin(), ::tolower); 
-    sort(word1.begin(), word1.end());
-    sort(word2.begin(), word2.end());
-    for(int i = 0; i < word1.length(); i++)
-    {
-        if(word1[i] != word2[i])
-            return false;
-    }
-    return true;
+    
+    string word1Copy = word1;
+    string word2Copy = word2;
+    
+    transform(word1Copy.begin(), word1Copy.end(), word1Copy.begin(), ::tolower); 
+    transform(word2Copy.begin(), word2Copy.end(), word2Copy.begin(), ::tolower); 
+    
+    sort(word1Copy.begin(), word1Copy.end());
+    sort(word2Copy.begin(), word2Copy.end());
+    
+    if(word1Copy.compare(word2Copy) == 0)
+        return true;
+    
+    return false;
 }
 
 std::vector<std::string> Anagram::SelectAnagrams(
