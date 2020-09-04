@@ -1,6 +1,8 @@
 #include "anagram.h"
 #include <string>
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
+
+using namespace std;
 
 bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& word2) {
     string w1 = word1;
