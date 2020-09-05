@@ -43,5 +43,5 @@ std::vector<std::string> Anagram::SelectAnagrams(
             selectedAnagrams.push_back(candidates[i]);
         }
     }
-    return candidates;
+    return selectedAnagrams;
 }
