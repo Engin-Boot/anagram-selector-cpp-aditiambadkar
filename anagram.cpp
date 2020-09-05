@@ -23,9 +23,6 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     sort(word1Copy.begin(), word1Copy.end());
     sort(word2Copy.begin(), word2Copy.end());
     
-    cout<<word1Copy<<endl;
-    cout<<word2Copy<<endl;
-    
     if(word1Copy.compare(word2Copy) == 0)
         return true;
     
@@ -36,7 +33,7 @@ std::vector<std::string> Anagram::SelectAnagrams(
         const std::string& word,
         const std::vector<std::string>& candidates) {
     vector<string> selectedAnagrams = {};
-    for(int i = 0; i < candidates.size(); i++)
+    for(int i = 0; (unsigned)i < candidates.size(); i++)
     {
         if(WordPairIsAnagram(word, candidates[i]))
         {
