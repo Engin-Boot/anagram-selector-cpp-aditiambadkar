@@ -22,3 +22,9 @@ TEST_CASE("selects anagrams of a word") {
         {"stream", "something", "maters"});
     REQUIRE(selection == std::vector<std::string>{"stream", "maters"});
 }
+
+TEST_CASE("reports no selection when no anagrams available") {
+    auto selection = Anagram::SelectAnagrams("poster",
+        {"sports", "pizzas", "potter"});
+    REQUIRE(selection == std::vector<std::string>{});
+}
