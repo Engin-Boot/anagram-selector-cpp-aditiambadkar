@@ -1,5 +1,6 @@
 #include "anagram.h"
 #include <string>
+#include <vector>
 #include <bits/stdc++.h>
 #include <algorithm>
 
@@ -34,6 +35,13 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
 std::vector<std::string> Anagram::SelectAnagrams(
         const std::string& word,
         const std::vector<std::string>& candidates) {
-    //Fill the correct implementation here
+    vector<string> selectedAnagrams = {};
+    for(int i = 0; i < candidates.size(); i++)
+    {
+        if(WordPairIsAnagram(word, candidates[i]))
+        {
+            selectedAnagrams.push_back(candidates[i]);
+        }
+    }
     return candidates;
 }
