@@ -3,7 +3,6 @@
 #include <vector>
 #include <bits/stdc++.h>
 #include <algorithm>
-#include <cctype>
 
 using namespace std;
 
@@ -15,8 +14,11 @@ bool Anagram::WordPairIsAnagram(const std::string& word1, const std::string& wor
     //word1Copy.erase(remove(word1Copy.begin(), word1Copy.end(), ' '), word1Copy.end());
     //word2Copy.erase(remove(word2Copy.begin(), word2Copy.end(), ' '), word2Copy.end());
     
-    word1Copy.erase(remove_if(word1Copy.begin(), word1Copy.end(), !(bool)std::isalpha), word1Copy.end());
-    word2Copy.erase(remove_if(word2Copy.begin(), word2Copy.end(), !(bool)std::isalpha), word2Copy.end());
+    word1Copy.erase(remove_if(word1Copy.begin(), word1Copy.end(),
+    [](char c) { return !isalpha(c); } ), word1Copy.end());
+    
+    word2Copy.erase(remove_if(word2Copy.begin(), word2Copy.end(),
+    [](char c) { return !isalpha(c); } ), word2Copy.end());
     
     if(word1Copy.length() != word2Copy.length())
         return false;
