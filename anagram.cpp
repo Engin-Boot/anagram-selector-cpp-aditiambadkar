@@ -3,6 +3,7 @@
 #include <vector>
 #include <bits/stdc++.h>
 #include <algorithm>
+#include <ctype.h>
 
 using namespace std;
 
