@@ -36,7 +36,7 @@ std::vector<std::string> Anagram::SelectAnagrams(
         const std::string& word,
         const std::vector<std::string>& candidates) {
     vector<string> selectedAnagrams = {};
-    for(int i = 0; (unsigned)i < candidates.size(); i++)
+    for(unsigned int i = 0; i < candidates.size(); i++)
     {
         if(WordPairIsAnagram(word, candidates[i]))
         {
